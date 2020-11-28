@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_activitybackground"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".view.view.activites.MainActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainTabs" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/mainTabs"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="start"
+
+        app:tabIconTintMode="screen"
+        app:tabIndicator="@drawable/ic_tableind"
+        app:tabIndicatorAnimationDuration="1500"
+        app:tabIndicatorColor="#FFFFFF"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="bottom"
+        app:tabInlineLabel="false"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabTextAppearance="@style/TabCustomFont"
+        app:tabTextColor="#6BFFFFFF"
+        app:tabUnboundedRipple="false">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/profileTab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:accessibilityHeading="true"
+            android:textAlignment="center" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/msgTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/messages" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/storiesTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stories" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/contactsTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contacts" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <ImageView
+        android:id="@+id/profileIcon"
+        android:layout_width="30dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="278dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/mainTabs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

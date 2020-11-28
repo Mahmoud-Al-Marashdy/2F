@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/PhoneSignUpLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.view.activites.phone.PhoneSingUp">
+
+    <ImageView
+        android:id="@+id/VerifyLogo"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="TODO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_singuplogo" />
+
+    <TextView
+        android:id="@+id/SingUpTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:text="Enter Your Phone Number"
+        android:textColor="@color/purple_200"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/VerifyLogo"
+        app:layout_constraintStart_toStartOf="@+id/VerifyLogo"
+        app:layout_constraintTop_toBottomOf="@+id/VerifyLogo" />
+
+    <LinearLayout
+        android:id="@+id/EnterNumLay"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SingUpTXT">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_countryPreference="eg"
+            app:ccp_showFlag="true"
+            app:ccp_showPhoneCode="true" />
+
+
+
+        <EditText
+            android:id="@+id/editText_carrierNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_edit_text"
+            android:editable="false"
+            android:gravity="center"
+            android:hint="Ex : 1xx 123 4567"
+            android:inputType="number"
+            android:maxLength="12"
+            android:singleLine="true"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="we will send a confirmation code via sms to your phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterNumLay" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/VerifySuccess"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/successgif"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/VerificationPIN" />
+
+    <TextView
+        android:id="@+id/verifyingTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Verifying Now..."
+        android:textColor="#4CAF50"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/ErrorTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="your phone number incomplete"
+        android:textColor="#DA0707"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/VerificationPIN"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/VerificationPIN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:textColor="@color/purple_700"
+        app:cursorColor="@color/purple_700"
+        app:itemCount="6"
+        app:itemHeight="48dp"
+        app:itemRadius="15dp"
+        app:itemSpacing="10dp"
+        app:itemWidth="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyingTXT"
+        app:lineColor="@color/purple_700"
+        app:lineWidth="1dp"
+        style="@style/PinWidget.PinView"/>
+
+    <Button
+        android:id="@+id/VerifyBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:text="Verify"
+        android:textColor="#FFFFFF"
+        app:elevation="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/VerifySuccess"
+        app:layout_constraintStart_toStartOf="@+id/VerifySuccess"
+        app:layout_constraintTop_toBottomOf="@+id/VerifySuccess" />
+
+    <Button
+        android:id="@+id/ContinueBTN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:text="Continue"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"
+        app:elevation="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/VerifySuccess"
+        app:layout_constraintStart_toStartOf="@+id/VerifySuccess"
+        app:layout_constraintTop_toBottomOf="@+id/VerifySuccess" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
